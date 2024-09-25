@@ -2,6 +2,8 @@
 
 * Here is my collection of C++ tutorials and projects.
 
+✌️ $\textcolor{violet}{\text{S1}}$
+
 ## Console App Projects:
 * BMI Calculator
     * Asks about weight and height. The calculate BMI and comment your BMI.
@@ -27,7 +29,5 @@
         * Add new item
         * Clear the list
         * Save the list
-
-✌️ $\textcolor{violet}{\text{S1}}$
 
 ## tutorials:
