@@ -19,4 +19,13 @@
     * User may enter which teams played and what was their scores.
     * User may also inspect teams, team members and past matches.
 
+* Shopping List(in Finnish)
+    * Shopping list program.
+    * Will keep latest shopping list in memory.
+    * User may 
+        * print out the shopping list
+        * Add new item
+        * Clear the list
+        * Save the list
+
 ## tutorials:
