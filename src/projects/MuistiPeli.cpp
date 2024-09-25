@@ -1,3 +1,10 @@
+/*######################################################################################################
+
+	Author: Samul1
+	16.04.2024
+
+########################################################################################################*/
+
 #include<iostream>
 #include<set>
 #include<Windows.h>
@@ -6,59 +13,59 @@
 
 Author: Samul1
 
-Tee moninpelattava muistipeli, jossa pelaajien pitää muistaa muiden pelaajien jo syöttämiä numeroita (0-20). 
-Peli kysyy ensin pelaajien määrän ja sen jälkeen pelaajilta vuoron perään yhden numeron ja puhdistaa näytön 
-(system("cls")) Jos pelaaja syöttää numeron, jonka joku toinen on jo syöttänyt, hän häviää pelin ja peli päättyy. 
-Käytä numeroiden tallentamiseen std::set-tietorakennetta.
+Tee moninpelattava muistipeli, jossa pelaajien pitï¿½ï¿½ muistaa muiden pelaajien jo syï¿½ttï¿½miï¿½ numeroita (0-20). 
+Peli kysyy ensin pelaajien mï¿½ï¿½rï¿½n ja sen jï¿½lkeen pelaajilta vuoron perï¿½ï¿½n yhden numeron ja puhdistaa nï¿½ytï¿½n 
+(system("cls")) Jos pelaaja syï¿½ttï¿½ï¿½ numeron, jonka joku toinen on jo syï¿½ttï¿½nyt, hï¿½n hï¿½viï¿½ï¿½ pelin ja peli pï¿½ï¿½ttyy. 
+Kï¿½ytï¿½ numeroiden tallentamiseen std::set-tietorakennetta.
 
-Jos pelaajat syöttävät kaikki numerot välillä 0-20, peli tyhjentää set-tietorakenteen, 
+Jos pelaajat syï¿½ttï¿½vï¿½t kaikki numerot vï¿½lillï¿½ 0-20, peli tyhjentï¿½ï¿½ set-tietorakenteen, 
 mutta pelaajia ei informoida asiasta ja peli jatkuu normaalisti.
 
 
 */
 
 
-// Funktioiden esittely kääntäjälle:
+// Funktioiden esittely kï¿½ï¿½ntï¿½jï¿½lle:
 int pelaajienLkm();
 void peliSilmukka(int pelaajat);
 bool onkoNumero(int numero, std::set<int> salaisetNumerot);
-void onkoTäysi(std::set<int> &salaisetNumerot);
+void onkoTï¿½ysi(std::set<int> &salaisetNumerot);
 void logo();
 
 int main()
 {
 	// Muuttujat:
 	int uusiPeli = 1;
-	// Tulostuksen ääkköset:
+	// Tulostuksen ï¿½ï¿½kkï¿½set:
 	setlocale(LC_ALL, "");
 
 	while (uusiPeli == 1)
 	{
-		// Kysytään pelaajien lukumäärä:
+		// Kysytï¿½ï¿½n pelaajien lukumï¿½ï¿½rï¿½:
 		int pelaajat = pelaajienLkm();
 		system("cls");
 
-		// Siirrytään pelisilmukkaan:
+		// Siirrytï¿½ï¿½n pelisilmukkaan:
 		peliSilmukka(pelaajat);
 
-		// Kysytään pelataanko uusi peli:
+		// Kysytï¿½ï¿½n pelataanko uusi peli:
 		do
 		{
 			logo();
 			std::cout << "Uusi peli?" << std::endl;
-			std::cout << " 1. Kyllä" << std::endl;
+			std::cout << " 1. Kyllï¿½" << std::endl;
 			std::cout << " 2. Ei" << std::endl;
 			std::cin >> uusiPeli;
 			if (uusiPeli < 1 || uusiPeli > 2)
 			{
 				system("cls");
-				std::cout << "Tarkista syöte." << std::endl;
+				std::cout << "Tarkista syï¿½te." << std::endl;
 			}
 		} while (uusiPeli < 1 || uusiPeli > 2);
 		system("cls");
 	}
 	logo();
-	std::cout << "Kiitos peleistä!";
+	std::cout << "Kiitos peleistï¿½!";
 }
 
 // Funktio kysyy kuinka monta pelaajaa on pelaamassa ja palauttaa annetun arvon.
@@ -68,7 +75,7 @@ int pelaajienLkm()
 	logo();
 
 	std::cout << "Kuinka monta pelaajaa?" << std::endl;
-	// Tarkistetaan silmukassa, ettei tule negatiivista tai 0 syötettä:
+	// Tarkistetaan silmukassa, ettei tule negatiivista tai 0 syï¿½tettï¿½:
 	do
 	{
 		std::cin >> pelaajat;
@@ -81,14 +88,14 @@ int pelaajienLkm()
 			// skip bad input
 			std::cin.ignore();
 			logo();
-			std::cout << "Pelaajien lukumäärä ei voi olla 0 tai negatiivinen." << std::endl;
+			std::cout << "Pelaajien lukumï¿½ï¿½rï¿½ ei voi olla 0 tai negatiivinen." << std::endl;
 		}
 	} while (pelaajat <= 0);
-	// Palautetaan paluuarvona pelaajien lukumäärä:
+	// Palautetaan paluuarvona pelaajien lukumï¿½ï¿½rï¿½:
 	return pelaajat;
 }
 
-// Funktio ottaa vastaan pelaajien lukumäärän integer arvona ja käsittelee pelin pääsilmukan:
+// Funktio ottaa vastaan pelaajien lukumï¿½ï¿½rï¿½n integer arvona ja kï¿½sittelee pelin pï¿½ï¿½silmukan:
 void peliSilmukka(int pelaajat)
 {
 	// Muuttujien esittely:
@@ -101,82 +108,82 @@ void peliSilmukka(int pelaajat)
 	{
 		for (int i = 1; i <= pelaajat; i++)
 		{
-			// Tarkistetaan syöte:
+			// Tarkistetaan syï¿½te:
 			do
 			{
 				logo();
 				std::cout << "Pelaaja" << i << std::endl;
-				std::cout << "Syötä numero 0-20: ";
+				std::cout << "Syï¿½tï¿½ numero 0-20: ";
 				std::cin >> valinnat[i];
-				// Jos väärä syöte:
+				// Jos vï¿½ï¿½rï¿½ syï¿½te:
 				if (valinnat[i] < 0 || valinnat[i] > 20)
 				{
 					// clean screen
 					system("cls");
-					std::cout << "Tarkista syöte." << std::endl;
+					std::cout << "Tarkista syï¿½te." << std::endl;
 				}
 			} while (valinnat[i] < 0 || valinnat[i] > 20);
 			
-			// Tarkistetaan onko setti täynnä:
-			onkoTäysi(salaisetNumerot);
-			// Tarkistetaan löytyykö syötettyä numeroa:
+			// Tarkistetaan onko setti tï¿½ynnï¿½:
+			onkoTï¿½ysi(salaisetNumerot);
+			// Tarkistetaan lï¿½ytyykï¿½ syï¿½tettyï¿½ numeroa:
 			onkoNumeroOlemassa = onkoNumero(valinnat[i], salaisetNumerot);
-			// Jos löytyi:
+			// Jos lï¿½ytyi:
 			if (onkoNumeroOlemassa == true)
 			{
-				std::cout << "Numero löytyi! Pelaaja " << i << " hävisi!" << std::endl;
+				std::cout << "Numero lï¿½ytyi! Pelaaja " << i << " hï¿½visi!" << std::endl;
 				peliOhi = 1;
 				system("pause");
 				break;
 			}
-			// Jos ei löytynyt:
+			// Jos ei lï¿½ytynyt:
 			else
-				// Tallennetaan syötetty numero settiin:
+				// Tallennetaan syï¿½tetty numero settiin:
 				salaisetNumerot.insert(valinnat[i]);
-			// Tyhjennetään näyttö vuoron lopuksi:
+			// Tyhjennetï¿½ï¿½n nï¿½yttï¿½ vuoron lopuksi:
 			system("cls");
 		}
 		system("cls");
 	}
 }
 
-// Funktio ottaa vastaan integer tyypin paramertin ja palauttaa paluuarvona bool arvon, löytyykö luku jo.
+// Funktio ottaa vastaan integer tyypin paramertin ja palauttaa paluuarvona bool arvon, lï¿½ytyykï¿½ luku jo.
 bool onkoNumero(int numero, std::set<int> salaisetNumerot)
 {
 	std::set<int>::iterator it;
-	//Etsitään setistä numero:
+	//Etsitï¿½ï¿½n setistï¿½ numero:
 	it = salaisetNumerot.find(numero);
-	// Jos numero löytyy:
+	// Jos numero lï¿½ytyy:
 	if (it != salaisetNumerot.end())
 		// Palautetaan arvo true:
 		return true;
-	// Jos numero ei löydy:
+	// Jos numero ei lï¿½ydy:
 	else
 		// Palautetaan arvo false:
 		return false;
 }
 
-// Funktio ottaa vastaan setin ja katsoo onko se täynnä. Jos se on täynnä, niin se tyhjennetään.
-void onkoTäysi(std::set<int> &salaisetNumerot)
+// Funktio ottaa vastaan setin ja katsoo onko se tï¿½ynnï¿½. Jos se on tï¿½ynnï¿½, niin se tyhjennetï¿½ï¿½n.
+void onkoTï¿½ysi(std::set<int> &salaisetNumerot)
 {
 	// Muuttujat:
 	int laskuri = 0;
 	// Iteraattori:
 	std::set<int>::iterator it;
-	// Käydään läpi setti:
+	// Kï¿½ydï¿½ï¿½n lï¿½pi setti:
 	for (int i = 0; i <= 20; i++)
 	{
-		// iteraattorilla etsitään numeroa i:
+		// iteraattorilla etsitï¿½ï¿½n numeroa i:
 		it = salaisetNumerot.find(i);
-		// Jos i:n arvo löytyy:
+		// Jos i:n arvo lï¿½ytyy:
 		if (it != salaisetNumerot.end())
 			// Kasvatetaan laskuria:
 			laskuri++;
 	}
-	// Jos laskuri on saavuttanut 21, eli kaikki numerot 0-20 ovar käytetty:
+	// Jos laskuri on saavuttanut 21, eli kaikki numerot 0-20 ovar kï¿½ytetty:
 	if (laskuri == 21)
 	{
-		// Poistetaan kaikki luvut setistä:
+		// Poistetaan kaikki luvut setistï¿½:
 		for (int i = 0; i <= 20; i++)
 		{
 			it = salaisetNumerot.find(i);
