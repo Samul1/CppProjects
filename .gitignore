@@ -1,0 +1,6 @@
+build
+release
+out
+.out
+.vs
+CMakeLists.txt.user
