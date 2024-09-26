@@ -30,4 +30,8 @@
         * Clear the list
         * Save the list
 
+* Menu System
+    * User may move with Up- and Down-keys
+    * User may select with Enter-key
+
 ## tutorials:
