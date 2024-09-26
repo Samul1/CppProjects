@@ -39,6 +39,7 @@ struct Menu
 	std::string menuName = "Main Menu";
     // Keep "Exit" at last index!
     std::vector<std::string> menuTexts = { "Valinta 1", "Valinta 2", "Valinta 3", "Valinta 4", "Exit"};
+	std::string helpText = { "Move with arrow keys and select with \"Enter\"" };
     bool isMenuDrawn = false;
 };
 
@@ -88,6 +89,7 @@ void renderMenu(Menu& menu, Selector& selector)
     if(menu.isMenuDrawn == false)
     {
         menu.isMenuDrawn = true;
+		std::cout << menu.helpText << "\n" << std::endl;
         std::cout << menu.menuName << std::endl;
         for (size_t i = 0; i < menu.menuTexts.size(); i++)
         {
