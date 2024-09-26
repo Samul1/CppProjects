@@ -27,7 +27,6 @@ struct KeyStates
     bool downKeyHandled = false;
 };
 
-// Use class structure for these!!
 struct Selector
 {
     char selector = '*';
@@ -36,7 +35,9 @@ struct Selector
 
 struct Menu
 {
-    // Keep "Exit"-last!
+	// Menu name.
+	std::string menuName = "Main Menu";
+    // Keep "Exit" at last index!
     std::vector<std::string> menuTexts = { "Valinta 1", "Valinta 2", "Valinta 3", "Valinta 4", "Exit"};
     bool isMenuDrawn = false;
 };
@@ -87,7 +88,7 @@ void renderMenu(Menu& menu, Selector& selector)
     if(menu.isMenuDrawn == false)
     {
         menu.isMenuDrawn = true;
-        printf("Main Menu\n");
+        std::cout << menu.menuName << std::endl;
         for (size_t i = 0; i < menu.menuTexts.size(); i++)
         {
             std::cout << "( ";
