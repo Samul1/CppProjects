@@ -2,7 +2,6 @@
 
 * Here is my collection of C++ tutorials and projects.
 
-
 ✌️ $\textcolor{violet}{\text{S1}}$
 
 ## Console App Projects:
@@ -36,3 +35,5 @@
     * User may select with Enter-key
 
 ## tutorials:
+
+* To Be Continued...
