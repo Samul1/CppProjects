@@ -181,7 +181,7 @@ int main()
     KeyStates keyStates;
     Selector selector;
     Menu menu;
-
+    size_t deltaTime = 16;
     size_t frameCounter = 0;
 
     while(!end)
@@ -189,7 +189,7 @@ int main()
         update(end, keyStates, selector, menu);
         
         const auto startTime = std::chrono::high_resolution_clock::now();
-        std::this_thread::sleep_for(std::chrono::milliseconds(16));
+        std::this_thread::sleep_for(std::chrono::milliseconds(deltaTime));
         const auto endTime = std::chrono::high_resolution_clock::now();
         const std::chrono::duration<double, std::milli> elapsedTime = endTime - startTime;
         
