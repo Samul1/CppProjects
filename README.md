@@ -34,6 +34,8 @@
     * User may move with Up- and Down-keys
     * User may select with Enter-key
 
+* Tetris
+
 ## tutorials:
 
 * To Be Continued...
