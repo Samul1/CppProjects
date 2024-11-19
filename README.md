@@ -1,6 +1,6 @@
 # Content:
 
-* Here is my collection of C++ tutorials and projects.
+* Here are some of my C++ tutorials and projects.
 
 ✌️ $\textcolor{violet}{\text{S1}}$
 
