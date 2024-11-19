@@ -8,7 +8,7 @@
 * BMI Calculator
     * Asks about weight and height. The calculate BMI and comment your BMI.
 
-* Memory Game(in Finnish)
+* Memory Game
     * Singleplayer/Multiplayer
     * Player/s need to give numbers between 0-20. If player/s enter a number that has been given already, game ends. 
     * Game will cycle through numbers and reset seamlessly when player/s have entered all numbers.
@@ -35,6 +35,8 @@
     * User may select with Enter-key
 
 * Tetris
+	* Rotate with z-key
+	* move with arrow-keys
 
 ## tutorials:
 

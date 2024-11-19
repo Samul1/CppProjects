@@ -29,7 +29,7 @@ mutta pelaajia ei informoida asiasta ja peli jatkuu normaalisti.
 int pelaajienLkm();
 void peliSilmukka(int pelaajat);
 bool onkoNumero(int numero, std::set<int> salaisetNumerot);
-void onkoT�ysi(std::set<int> &salaisetNumerot);
+void onkoTaysi(std::set<int> &salaisetNumerot);
 void logo();
 
 int main()
@@ -52,20 +52,20 @@ int main()
 		do
 		{
 			logo();
-			std::cout << "Uusi peli?" << std::endl;
-			std::cout << " 1. Kyll�" << std::endl;
-			std::cout << " 2. Ei" << std::endl;
+			std::cout << "New game?" << std::endl;
+			std::cout << " 1. Yes" << std::endl;
+			std::cout << " 2. No" << std::endl;
 			std::cin >> uusiPeli;
 			if (uusiPeli < 1 || uusiPeli > 2)
 			{
 				system("cls");
-				std::cout << "Tarkista sy�te." << std::endl;
+				std::cout << "Check input." << std::endl;
 			}
 		} while (uusiPeli < 1 || uusiPeli > 2);
 		system("cls");
 	}
 	logo();
-	std::cout << "Kiitos peleist�!";
+	std::cout << "Thankyou for playing!";
 }
 
 // Funktio kysyy kuinka monta pelaajaa on pelaamassa ja palauttaa annetun arvon.
@@ -74,7 +74,7 @@ int pelaajienLkm()
 	int pelaajat = 0;
 	logo();
 
-	std::cout << "Kuinka monta pelaajaa?" << std::endl;
+	std::cout << "How many players?" << std::endl;
 	// Tarkistetaan silmukassa, ettei tule negatiivista tai 0 sy�tett�:
 	do
 	{
@@ -88,7 +88,7 @@ int pelaajienLkm()
 			// skip bad input
 			std::cin.ignore();
 			logo();
-			std::cout << "Pelaajien lukum��r� ei voi olla 0 tai negatiivinen." << std::endl;
+			std::cout << "Number of players can not be 0 or negative." << std::endl;
 		}
 	} while (pelaajat <= 0);
 	// Palautetaan paluuarvona pelaajien lukum��r�:
@@ -112,26 +112,26 @@ void peliSilmukka(int pelaajat)
 			do
 			{
 				logo();
-				std::cout << "Pelaaja" << i << std::endl;
-				std::cout << "Sy�t� numero 0-20: ";
+				std::cout << "Player" << i << std::endl;
+				std::cout << "Enter a number 0-20: ";
 				std::cin >> valinnat[i];
 				// Jos v��r� sy�te:
 				if (valinnat[i] < 0 || valinnat[i] > 20)
 				{
 					// clean screen
 					system("cls");
-					std::cout << "Tarkista sy�te." << std::endl;
+					std::cout << "Check input." << std::endl;
 				}
 			} while (valinnat[i] < 0 || valinnat[i] > 20);
 			
 			// Tarkistetaan onko setti t�ynn�:
-			onkoT�ysi(salaisetNumerot);
+			onkoTaysi(salaisetNumerot);
 			// Tarkistetaan l�ytyyk� sy�tetty� numeroa:
 			onkoNumeroOlemassa = onkoNumero(valinnat[i], salaisetNumerot);
 			// Jos l�ytyi:
 			if (onkoNumeroOlemassa == true)
 			{
-				std::cout << "Numero l�ytyi! Pelaaja " << i << " h�visi!" << std::endl;
+				std::cout << "Number found! Player " << i << " lost!" << std::endl;
 				peliOhi = 1;
 				system("pause");
 				break;
@@ -164,7 +164,7 @@ bool onkoNumero(int numero, std::set<int> salaisetNumerot)
 }
 
 // Funktio ottaa vastaan setin ja katsoo onko se t�ynn�. Jos se on t�ynn�, niin se tyhjennet��n.
-void onkoT�ysi(std::set<int> &salaisetNumerot)
+void onkoTaysi(std::set<int> &salaisetNumerot)
 {
 	// Muuttujat:
 	int laskuri = 0;
