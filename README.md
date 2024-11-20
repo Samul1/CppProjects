@@ -38,6 +38,13 @@
 	* Rotate with z-key
 	* move with arrow-keys
 
+* Game Library
+    * User may set up .exe path for game or other program and launch it through this library.
+    * User may set custom picture for game or other program.
+    * User may set up custom name for the game or other program.
+    * User may also modify name or path information of programs in the list.
+    * User may delete programs from the list.
+
 ## tutorials:
 
 * To Be Continued...
