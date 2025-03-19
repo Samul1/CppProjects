@@ -44,6 +44,17 @@
     * User may set up custom name for the game or other program.
     * User may also modify name or path information of programs in the list.
     * User may delete programs from the list.
+	
+* Caffeine Player
+	* Media player that can play
+		* .wav .mp3 .mp4 .ogg
+	* Loop all
+	* Next track
+	* Previous track
+	* Play
+	* Pause
+	* Volume control
+	* User may add their own files
 
 ## tutorials:
 
